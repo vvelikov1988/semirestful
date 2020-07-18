@@ -1,12 +1,308 @@
 from django.shortcuts import render, HttpResponse, redirect
-from . import models
+from .models import Shows
 
 def index(request):
     return render(request, 'index.html')
 
-# def create(request, show_id):
-#     Shows.objects.create(title=request.POST['title'], network=request.POST['network'], release_date = request.POST['reldate'], description = request.POST['desc'])
-#     return redirect,(f'/shows/{show_id}')
+def create(request):
+    Shows.objects.create(title=request.POST['title'], network=request.POST['network'], release_date = request.POST['reldate'], description = request.POST['desc'])
+    return redirect ('/')
 
-# def showdetails(request, show_id):
-#     return redirect('/')
+def showdetails(request, show_id):
+    show = Shows.objects.get(id=show_id)
+    context = {
+        "show": show
+    }
+    return render(request, 'showdetails.html', context)
+def allshows(request):
+    shows = Shows.objects.all()
+    context = {
+        'shows': shows
+    }
+    return render(request, 'shows.html', context)
+
+def editshow(request, show_id):
+    Shows.objects.update(title=request.POST['title'], network=request.POST['network'], release_date = request.POST['reldate'], description = request.POST['desc'])
+    return redirect (f'/shows/{show_id}')
+
+def update(request, show_id):
+    return render(request, 'index.hmtl')
+
+def destroy(request, show_id):
+    return render(request, 'index.hmtl')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

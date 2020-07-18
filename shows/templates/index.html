@@ -10,7 +10,7 @@
     </head>
     <body>
         <h1>Add A New Show:</h1>
-        <form action="/create/{{show.id}}" method = "POST">
+        <form action="/create" method = "POST">
             {% csrf_token %}
             <div class ="form group">
                 <label for="title">Show title:</label>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+ <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Network</th>
+                    <th>Release Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for show in shows %}
+            <tr>
+                <td>{{ show.id }}</td>
+                <td>{{ show.title }}</td>
+                <td>{{ show.network }}</td>
+                <td>{{ show.release_date }}</td>
+                <td><a href="/shows/{{ show.id }}">Details</a></td>
+                <td><a href="/shows/{{ show.id }}/edit">Edit</a></td>
+                <td><a href="/shows/{{ show.id }}/destroy">Delete</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        
+        <script src="" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+ <html class="no-js"> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Show Details</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>TV Show: {{ show.id }}</h1><br>
+        <h2>Show Title: {{ show.title }}</h2><br>
+        <h2>Show Network: {{ show.network }}</h2><br>
+        <h3>Show Release Date: {{ show.release_date }}</h3><br>
+        <h4>Show Description: {{ show.description }}</h4><br>
+        <h4>Last Show Update: {{ show.updated_at }}</h4><br>
+        <h2><a href = "/shows/{{show.id}}/edit">Edit This Show</a></h2>
+        <h2><a href = "/shows/{{show.id}}/destroy">Delete This Show</a></h2>
+        
+        
+        <script src="" async defer></script>
+    </body>
+</html>
