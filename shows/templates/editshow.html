@@ -10,7 +10,7 @@
     </head>
     <body>
         Edit Show {{show.id}}
-        <form action="/{{show.id}}/editshow" method = "POST">
+        <form action="/{{show.id}}/update" method = "POST">
             {% csrf_token %}
             <div class ="form group">
                 <label for="title">Show title:</label>
