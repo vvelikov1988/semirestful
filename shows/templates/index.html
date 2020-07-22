@@ -11,6 +11,13 @@
     <body>
         <h1>Add A New Show:</h1>
         <h2><a href ="/shows">View all Shows</a></h2>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
         <form action="/create" method = "POST">
             {% csrf_token %}
             <div class ="form group">

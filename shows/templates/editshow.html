@@ -12,6 +12,13 @@
         Edit Show {{show.id}}
         <form action="/{{show.id}}/update" method = "POST">
             {% csrf_token %}
+            {% if messages %}
+            <ul class="messages">    
+                {% for message in messages %}    
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                {% endfor %}
+            </ul>
+            {% endif %}
             <div class ="form group">
                 <label for="title">Show title:</label>
                 <input type="text" name="title" id="title">
